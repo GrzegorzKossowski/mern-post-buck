@@ -8,6 +8,6 @@
 
 @layer base {
     body {
-        @apply font-rubik;
+        @apply font-rubik bg-slate-400;
     }
 }

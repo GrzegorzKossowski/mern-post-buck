@@ -1,4 +1,3 @@
-import path from 'path';
 import {
     createBrowserRouter,
 } from 'react-router-dom';
@@ -6,7 +5,7 @@ import App from './App';
 
 export const router = createBrowserRouter([
   {
-    path:'/',
+    path:'',
     element: <App/>,
     errorElement: <>Error</>    
   }

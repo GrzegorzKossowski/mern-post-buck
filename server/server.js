@@ -19,9 +19,6 @@ import { errorHandler, notFound } from './middleware/error.js'
 dotenv.config()
 // connect to MongoDB
 connectDB()
-// create own __dirname (walkaround) when using type: modules
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 const app = express()
 // allow to read the body of req
 app.use(express.json({ limit: '30mb' }))
@@ -36,8 +33,6 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
 // app.use(morgan('common'))
 app.use(cors())
 app.use(cookieParser());
-// set static public folder
-app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // file storage multer
 // https://github.com/expressjs/multer#readme
@@ -59,9 +54,27 @@ app.use(`/api/${process.env.VERSION}/users`, userRoutes)
 import postRoutes from './routes/post.route.js'
 app.use(`/api/${process.env.VERSION}/posts`, postRoutes)
 
-app.use(`/api/${process.env.VERSION}`, (req, res, next) => {
-  res.json({ message: 'API works' })
-})
+
+// create own __dirname (walkaround) when using type: modules
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
+// set static public folder
+// app.use('/static', express.static(path.join(__dirname, 'public')))
+
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
+  // app.use('/uploads', express.static('/var/data/uploads'));
+  app.use(express.static(path.join(__dirname, '/client/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  );
+} else {
+  const __dirname = path.resolve();
+  app.get(['/', '/api' `/api/${process.env.VERSION}`], (req, res) => {
+    res.send('API is running....');
+  });
+}
 
 // middlewares
 // use error handler at the end of actions
