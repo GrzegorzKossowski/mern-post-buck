@@ -1,4 +1,4 @@
-// https://youtu.be/K8YELRmUb5o&t=5408
+// https://youtu.be/K8YELRmUb5o?t=6573
 import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
@@ -79,3 +79,5 @@ process.on('unhandledRejection', (err, promise) => {
   console.log(`${chalk.red("Error:")} ${err.message}`);
   server.close(() => process.exit(1))
 })
+
+export default server
