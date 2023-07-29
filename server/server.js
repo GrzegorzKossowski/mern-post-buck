@@ -36,19 +36,6 @@ app.use(cors({
 }))
 app.use(cookieParser());
 
-// file storage multer
-// https://github.com/expressjs/multer#readme
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, 'public/assets')
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, file.originalname)
-//   },
-// })
-// const upload = multer({ storage })
-
-
 import authRoutes from './routes/auth.route.js'
 app.use(`/api/${process.env.VERSION}/auth`, authRoutes)
 import userRoutes from './routes/user.route.js'
@@ -92,5 +79,3 @@ process.on('unhandledRejection', (err, promise) => {
   console.log(`${chalk.red("Error:")} ${err.message}`);
   server.close(() => process.exit(1))
 })
-
-export default server
