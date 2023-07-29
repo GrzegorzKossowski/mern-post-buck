@@ -1,22 +1,29 @@
 import express from 'express'
 import { protect, admin } from '../middleware/authMiddleware.js'
-import { getPosts, createPost, getPostById, likePost } from '../controllers/post.controller.js'
+import { getAllPosts, createPost, getPostById, toggleLikePost, deletePostById, getUsersPosts } from '../controllers/post.controller.js'
 import upload from '../middleware/storage.js'
 
 const router = express.Router()
 
+// api/v1/posts...
+// get all posts
+// 
+
+
 router
   .route('/')
+  // get all posts
+  .get(protect, getAllPosts)  
   .post(protect, upload.single('picture'), createPost)
-  .get(getPosts)
 
 router
   .route('/:userId/posts')
-  .get(protect, getPostById)
+  .get(protect, getUsersPosts)
+  .delete(protect, deletePostById)
 
 router
   .route('/:postId/like')
-  .patch(protect, likePost)
+  .patch(protect, toggleLikePost)
 
 
 

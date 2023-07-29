@@ -9,10 +9,10 @@ const postSchema = new Schema({
   },
   description: String,
   picturePath: String,
-  likes: {
-    type: Map,
-    of: Boolean
-  },
+  likes: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  }],
   comments: {
     type: Array,
     default: []

@@ -10,6 +10,7 @@ router
 router
   .route('/login')
   .post(loginUser)
-router.post('/logout', logoutUser);
+router
+  .get('/logout', logoutUser);
 
 export default router
