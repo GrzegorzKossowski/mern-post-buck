@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === 'production') {
   );
 } else {
   const __dirname = path.resolve();
-  app.get(['/', '/api' `/api/${process.env.VERSION}`], (req, res) => {
+  app.get(['/', '/api', `/api/${process.env.VERSION}`], (req, res) => {
     res.send('API is running....');
   });
 }
@@ -90,3 +90,5 @@ process.on('unhandledRejection', (err, promise) => {
   console.log(`${chalk.red("Error:")} ${err.message}`);
   server.close(() => process.exit(1))
 })
+
+export default server
