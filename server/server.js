@@ -31,7 +31,9 @@ app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }))
 // standard logger with options
 // app.use(morgan('common'))
-app.use(cors())
+app.use(cors({
+  credentials: true
+}))
 app.use(cookieParser());
 
 // file storage multer
