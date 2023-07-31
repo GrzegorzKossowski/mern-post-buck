@@ -11,3 +11,17 @@
         @apply font-rubik bg-slate-400;
     }
 }
+
+@layer components {
+    .btn {
+    @apply border border-zinc-900 px-3 py-2
+    }
+}
+
+.text-input {
+    @apply p-2;
+}
+
+.link {
+    @apply text-[#ede866];
+}

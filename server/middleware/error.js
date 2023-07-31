@@ -5,15 +5,15 @@ export const notFound = (req, res, next) => {
 }
 
 export const errorHandler = (err, req, res, next) => {
-  
+
   let error = { ...err }
   error.message = err.message
 
   return res
     .status(error.statusCode || 500)
     .json({
-      success: false,
-      error: error.message || 'Server Error',
-      stack: process.env.NODE_ENV === 'production' ? "production" : error.stack
+      status: error.statusCode || 500,
+      message: error.message || 'Server Error',
+      stack: process.env.NODE_ENV === 'production' ? "production" : error.stack,
     })
 }

@@ -11,6 +11,6 @@ router
   .route('/login')
   .post(loginUser)
 router
-  .get('/logout', logoutUser);
+  .post('/logout', logoutUser);
 
 export default router

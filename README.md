@@ -9,7 +9,7 @@
 
 `/login`    - POST  - login user
 
-`/logout`   - GET   - logout user
+`/logout`   - POST   - logout user
 
 ### Users
 **/api/v1/users**

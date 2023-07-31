@@ -10,7 +10,7 @@ export const generateToken = (res, userId) => {
   const token = jwt
     .sign({ userId },
       process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRE }) //30d
+      { expiresIn: process.env.JWT_EXPIRE }) //1h
 
   // JWT as HTTP-Only cookie
   // ustaw obiekt cookie w responsie o nazwie `jwt`.
@@ -18,6 +18,6 @@ export const generateToken = (res, userId) => {
     httpOnly: true,
     secure: process.env.NODE_ENV !== 'development',
     sameSite: 'strict',
-    maxAge: 3 * 24 * 60 * 60 * 1000 //3 days
+    maxAge: 1000 * 60 * 60 //1 h
   })
 }

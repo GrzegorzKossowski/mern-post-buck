@@ -8,9 +8,11 @@
         "server": "nodemon server/server.js",
         "client": "npm start --prefix client",
         "client:build": "npm run build --prefix client",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "build": "npm install && npm install --prefix client && npm run build --prefix client",
-        "vercel-bulild":"npm install && npm install --prefix client && npm run build --prefix client"
+        "frontend": "npm start --prefix frontend",
+        "frontend:build": "npm run build --prefix frontend",
+        "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+        "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+        "vercel-bulild": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
     },
     "keywords": [],
     "author": "Grzegorz Kossowski",
