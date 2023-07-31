@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import i18n from 'i18next';
-import { t } from 'i18next';
 import { FaBars, FaTimes } from 'react-icons/fa';
+// the hook
+import { useTranslation } from 'react-i18next';
+
 interface NavbarProps {}
 
 interface DropdownProps {
@@ -10,6 +11,7 @@ interface DropdownProps {
     setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const Dropdown = ({ active, setActive }: DropdownProps) => {
+    const { i18n } = useTranslation();
     const languages = i18n.languages;
     return (
         <div className={`w-[50px] pt-14 md:${active ? '' : 'hidden'}`}>
@@ -32,6 +34,7 @@ const Dropdown = ({ active, setActive }: DropdownProps) => {
 };
 
 const Navbar = ({ ...restProps }: NavbarProps) => {
+    const { t, i18n } = useTranslation();
     const [open, setOpen] = useState<boolean>(false);
     const handleClick = () => setOpen(!open);
     const [active, setActive] = useState<boolean>(false);

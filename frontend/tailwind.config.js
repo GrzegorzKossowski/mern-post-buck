@@ -5,14 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#1e293b",
-        secondary: "#00f6ff",
-        dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
-      },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
         poppins: ["Poppins", "sans-serif"]
       },
     },

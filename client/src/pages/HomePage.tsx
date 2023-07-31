@@ -1,35 +1,18 @@
-import React from 'react';
 import {
-    BsCamera,
-    BsCardImage,
     BsFillPersonPlusFill,
-    BsFilm,
     BsGear,
-    BsGearFill,
     BsHeart,
     BsImage,
-    BsPaperclip,
-    BsPen,
     BsPencil,
-    BsPersonAdd,
-    BsPersonFillGear,
-    BsPersonPlus,
     BsPersonPlusFill,
-    BsProjector,
     BsShare,
 } from 'react-icons/bs';
 import {
-    BiPaperPlane,
-    BiSolidMicrophone,
     BiSolidPaperPlane,
 } from 'react-icons/bi';
 import {
     FaLinkedin,
-    FaGithub,
-    FaYoutube,
-    FaInstagram,
     FaFacebook,
-    FaPencilAlt,
 } from 'react-icons/fa';
 interface HomePageProps {}
 
