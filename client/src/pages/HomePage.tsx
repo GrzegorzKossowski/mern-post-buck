@@ -7,14 +7,8 @@ import {
     BsPersonPlusFill,
     BsShare,
 } from 'react-icons/bs';
-import {
-    BiCommentDetail,
-    BiSolidPaperPlane,
-} from 'react-icons/bi';
-import {
-    FaLinkedin,
-    FaFacebook,
-} from 'react-icons/fa';
+import { BiCommentDetail, BiSolidPaperPlane } from 'react-icons/bi';
+import { FaLinkedin, FaFacebook } from 'react-icons/fa';
 interface HomePageProps {}
 
 const HomePage = ({ ...restProps }: HomePageProps) => {
@@ -27,7 +21,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                             <div className='flex overflow-hidden'>
                                 <img
                                     className='inline-block h-14 w-14 rounded-full border-2'
-                                    src='https://randomuser.me/api/portraits/women/68.jpg'
+                                    src='/assets/images/68.jpg'
                                     alt=''
                                 />
                             </div>
@@ -81,7 +75,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                             <div className='flex overflow-hidden'>
                                 <img
                                     className='inline-block h-10 w-10 rounded-full border-2'
-                                    src='https://randomuser.me/api/portraits/women/68.jpg'
+                                    src='/assets/images/45.jpg'
                                     alt=''
                                 />
                             </div>
@@ -100,7 +94,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                             <div className='flex overflow-hidden'>
                                 <img
                                     className='inline-block h-10 w-10 rounded-full border-2'
-                                    src='https://randomuser.me/api/portraits/men/68.jpg'
+                                    src='/assets/images/92.jpg'
                                     alt=''
                                 />
                             </div>
@@ -122,7 +116,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                         <div className='overflow-hidden min-w-fit hidden lg:flex'>
                             <img
                                 className='inline-block h-16 w-16 rounded-full border-2'
-                                src='https://randomuser.me/api/portraits/women/68.jpg'
+                                src='/assets/images/68.jpg'
                                 alt=''
                             />
                         </div>
@@ -144,7 +138,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                             <div className='flex overflow-hidden'>
                                 <img
                                     className='inline-block h-14 w-14 rounded-full border-2'
-                                    src='https://randomuser.me/api/portraits/women/45.jpg'
+                                    src='/assets/images/45.jpg'
                                     alt=''
                                 />
                             </div>
@@ -165,7 +159,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                     <div className='my-4'>
                         <img
                             className='w-full'
-                            src='https://images.unsplash.com/photo-1690475565796-e1c097a15fe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+                            src='/assets/images/coast.jpg'
                             alt=''
                         />
                     </div>
