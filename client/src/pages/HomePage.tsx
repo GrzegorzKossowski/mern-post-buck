@@ -8,6 +8,7 @@ import {
     BsShare,
 } from 'react-icons/bs';
 import {
+    BiCommentDetail,
     BiSolidPaperPlane,
 } from 'react-icons/bi';
 import {
@@ -174,7 +175,7 @@ const HomePage = ({ ...restProps }: HomePageProps) => {
                             <span className='text-xl'>45</span>
                         </div>
                         <div className='flex items-center gap-4'>
-                            <BsHeart size={28} />
+                            <BiCommentDetail size={28} />
                             <span className='text-xl'>45</span>
                         </div>
                         <div className='ms-auto'>
