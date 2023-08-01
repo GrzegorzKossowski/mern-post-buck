@@ -3,6 +3,7 @@ import App from './App';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import FeedPage from '../pages/FeedPage';
+import PrivateRoute from '../components/PrivateRoute';
 
 export const router = createBrowserRouter([
     {
@@ -12,10 +13,17 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <LoginPage /> },
             {
-                path: '/feed',
-                element: <HomePage />,
-                children: [{ index: true, element: <FeedPage /> }],
+                path: '',
+                element: <PrivateRoute toLogin />,
+                children: [
+                    {
+                        path: '/feed',
+                        element: <HomePage />,
+                        children: [{ index: true, element: <FeedPage /> }],
+                    },
+                ],
             },
+
             // { path: '/register', element: <RegisterPage /> },
             // {
             //     path: '/home',

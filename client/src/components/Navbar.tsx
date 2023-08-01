@@ -71,11 +71,12 @@ const Navbar = ({ ...restProps }: NavbarProps) => {
                     <li className='hover:text-[#00abf0]'>
                         <Link to='/'>{t('navbar.home')}</Link>
                     </li>
+                    {/* 
                     <li className='hover:text-[#00abf0]'>
                         <Link to='/'>{t('navbar.profile')}</Link>
-                    </li>
+                    </li> */}
                     <li className='hover:text-[#00abf0]'>
-                        <button onClick={handleLogout}>
+                        <button className='btn' onClick={handleLogout}>
                             {t('navbar.logout')}
                         </button>
                     </li>
