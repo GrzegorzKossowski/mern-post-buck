@@ -35,8 +35,6 @@ const LoginWidget = ({ ...restProps }: LoginWidgetProps) => {
         event.preventDefault();
         const email = emailRef?.current?.value;
         const password = passwordRef?.current?.value;
-        console.log(email, password);
-
         if (email && password) {
             try {
                 const res = await login({ email, password }).unwrap();
