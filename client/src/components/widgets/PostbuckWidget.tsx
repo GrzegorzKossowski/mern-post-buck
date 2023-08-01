@@ -1,5 +1,4 @@
 import React from 'react';
-import { BiLogoMongodb } from 'react-icons/bi';
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs } from 'react-icons/si';
 
 interface PostbuckWidgetProps {}

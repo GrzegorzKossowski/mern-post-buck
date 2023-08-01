@@ -5,7 +5,7 @@ import { useLoginMutation } from '../../redux/slices/usersApiSlice';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials } from '../../redux/slices/authSlice';
-import { BarLoader, PacmanLoader, PulseLoader } from 'react-spinners';
+import { BarLoader } from 'react-spinners';
 import { RootState } from '../../redux/store';
 import { LuArrowBigRight } from 'react-icons/lu';
 

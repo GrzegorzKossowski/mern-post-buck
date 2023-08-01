@@ -45,7 +45,7 @@ const Navbar = ({ ...restProps }: NavbarProps) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [logout, { isLoading }] = useLogoutMutation();
+    const [logout] = useLogoutMutation();
 
     async function handleLogout(
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -53,7 +53,7 @@ const Navbar = ({ ...restProps }: NavbarProps) => {
         try {
             console.log(`handle logout`);
 
-            const res = await logout().unwrap();
+            await logout().unwrap();
             dispatch(removeCredentials());
             navigate('/', { replace: true });
         } catch (error: any) {

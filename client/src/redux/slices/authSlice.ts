@@ -1,7 +1,5 @@
-import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { UserAuthType } from '../../types';
-import { RootState } from '../store';
-import { useSelector } from 'react-redux';
 
 const storage = localStorage.getItem('userInfo');
 const initialState = {

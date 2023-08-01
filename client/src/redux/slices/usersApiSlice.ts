@@ -1,5 +1,4 @@
-import { AUTH_URL, USERS_URL } from '../constants';
-import { UserLoginType, UserRegisterType, UserModelType } from '../../types';
+import { AUTH_URL } from '../constants';
 import { apiSlice } from './apiSlice';
 
 export const usersApiSlice = apiSlice.injectEndpoints({
