@@ -76,7 +76,8 @@ export const loginUser = asyncHandler(async (req, res, next) => {
     // wygeneruj token funkcją pomocniczą
     generateToken(res, _id)
     // zwróc dane do klienta wraz z tokenem
-    return res.status(200).json({ _id, firstName, lastName, email, isAdmin })
+    const expiresIn = Date.now() + +process.env.JWT_EXPIRE
+    return res.status(200).json({ _id, firstName, lastName, email, isAdmin, expiresIn })
   }
   throw new ErrorResponse(`Invalid login data`, 400)
 })

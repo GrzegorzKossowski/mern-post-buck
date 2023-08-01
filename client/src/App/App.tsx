@@ -1,16 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Navbar from '../components/Navbar';
 
 function App() {
     return (
         <>
-            <Navbar />
-            <main>
+            <main className='mx-auto md:max-w-5xl'>
                 <Outlet />
             </main>
-            {/* <footer>Footer</footer> */}
             <ToastContainer position='bottom-right' />
         </>
     );

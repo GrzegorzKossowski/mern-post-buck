@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 // the hook
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { useLogoutMutation } from '../redux/slices/usersApiSlice';
+import { removeCredentials } from '../redux/slices/authSlice';
+import { toast } from 'react-toastify';
 
 interface NavbarProps {}
 
@@ -39,6 +43,24 @@ const Navbar = ({ ...restProps }: NavbarProps) => {
     const handleClick = () => setOpen(!open);
     const [active, setActive] = useState<boolean>(false);
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [logout, { isLoading }] = useLogoutMutation();
+
+    async function handleLogout(
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) {
+        try {
+            console.log(`handle logout`);
+
+            const res = await logout().unwrap();
+            dispatch(removeCredentials());
+            navigate('/', { replace: true });
+        } catch (error: any) {
+            toast.error(`No valid data provided`);
+        }
+    }
+
     return (
         <header className='fixed top-0 left-0 w-full px-5 py-3 flex justify-between items-center z-50 backdrop-blur-md border-b-[1px] border-slate-700 bg-slate-alpha-7'>
             <Link className='text-2xl font-semibold' to='/'>
@@ -51,6 +73,11 @@ const Navbar = ({ ...restProps }: NavbarProps) => {
                     </li>
                     <li className='hover:text-[#00abf0]'>
                         <Link to='/'>{t('navbar.profile')}</Link>
+                    </li>
+                    <li className='hover:text-[#00abf0]'>
+                        <button onClick={handleLogout}>
+                            {t('navbar.logout')}
+                        </button>
                     </li>
                     <li
                         className='relative hover:text-[#00abf0]'
