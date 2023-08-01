@@ -67,7 +67,7 @@ const LoginWidget = ({ ...restProps }: LoginWidgetProps) => {
                                         type='email'
                                         placeholder='Your email'
                                         className='rounded-r-lg flex-1 appearance-none border w-full py-2 px-4 text-base text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent'
-                                        defaultValue={'john@doe.com'}
+                                        // defaultValue={'john@doe.com'}
                                     />
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ const LoginWidget = ({ ...restProps }: LoginWidgetProps) => {
                                         type='password'
                                         placeholder='Your password'
                                         className='rounded-r-lg flex-1 appearance-none border w-full py-2 px-4 text-base text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent'
-                                        defaultValue={'123456'}
+                                        // defaultValue={'123456'}
                                     />
                                 </div>
                             </div>
